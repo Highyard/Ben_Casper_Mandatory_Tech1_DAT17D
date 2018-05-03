@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+    <style>
+    .center{
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+
+    }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="d-flex justify-content-center">
+
+        <div class="p-1">
+
+    <div class="row" style="margin-top:20px">
+
+        <div class="col-auto">
+
+            <form th:action="@{/login}" method="post">
+
+                <fieldset>
+
+                    <h1>Vær venlig at log ind</h1>
+
+                    <!--<div th:if="${error}">-->
+
+                        <!--<div class="alert alert-danger">-->
+                            <!--Forkert brugernavn eller adgangskode.-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+
+
+                    <!--<div th:if="${logout}">-->
+                        <!--<div class="alert alert-info">-->
+                            <!--Du er blevet logget ud.-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="form-group">
+                        <input type="text" name="userName" id="username" class="form-control input-lg"
+                               placeholder="Brugernavn" required="true" autofocus="true"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg"
+                               placeholder="Adgangskode" required="true"/>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-auto">
+                            <input type="submit" class="btn btn-lg btn-primary btn-block" value="Log ind"/>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

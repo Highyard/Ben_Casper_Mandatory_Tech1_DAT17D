@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:display="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>Opret</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" th:href="@{Styles2.css}">
+
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="d-flex justify-content-center">
+
+        <div class="p-1">
+
+            <div class="col-auto">
+
+            <h1> Opret nyt barn </h1>
+
+    <form method="Post" th:action="@{/create}" th:object="${child}">
+
+        <div class="form-group">
+            <label for="fornavn">  Indtast barnets navn</label>
+             <input class="form-control" id="fornavn" type="text" required th:field="*{forNavn}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="efternavn">Indtast barnets efternavn</label>
+            <input class="form-control" id="efternavn" type="text" required th:field="*{efterNavn}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="kontaktperson">Indtast kontaktperson(er)</label>
+            <textarea class="form-control" id="kontaktperson" style= "height: 150px; width: 500px" th:field="*{kontaktPerson}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="cpr">Indtast cpr</label>
+            <input class="form-control" id="cpr" type="text" th:field="*{cpr}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="startDato">Indtast start dato </label>
+            <input class="form-control" id="startDato" type="date" th:field="*{startDato}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="note"><i>Skriv eventuelt en note</i></label>
+            <textarea class="form-control" id="note" style= "height: 150px; width: 500px" th:field="*{noter}"/>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Opret "/>
+        </div>
+
+    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Slet</title>
+    <link rel="stylesheet" type="text/css" th:href="@{Styles.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+<div class="container">
+
+
+    <div class="d-flex justify-content-center">
+
+        <div class="p-1">
+
+            <div class="col-auto">
+
+    <h2>Er du sikker på, at du vil slette barnet?</h2>
+
+    <form action="#" th:action="@{/delete}" method="post">
+
+        <p th:text="${child.forNavn + ' ' +  child.efterNavn}"></p>
+
+        <input type="hidden" th:field="${child.id}" />
+
+        <input class="btn btn-success"  type="submit" value="Ja"/>
+
+        <a href="/home" class="btn btn-danger w">Nej</a>
+
+
+
+
+    </form>
+
+            </div>
+            </div>
+            </div>
+
+</div>
+
+
+
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+</body>
+</html>

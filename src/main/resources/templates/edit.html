@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:display="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rediger</title>
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{../Styles2.css}">
+
+</head>
+
+<body>
+<div class="container">
+
+    <div class="d-flex justify-content-center">
+
+        <div class="p-1">
+
+            <div class="col-auto">
+
+            <h1> Rediger børne oplysninger</h1>
+
+    <form method="Post" th:action="@{/edit}">
+
+        <div class="form-group">
+            <label for="fornavn"> Ændre fornavn</label>
+            <input class="form-control" id="fornavn" type="text"  th:field="${child.forNavn}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="efternavn"> Ændre efternavn</label>
+            <input class="form-control" id="efternavn" type="text"  th:field="${child.efterNavn}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="kontaktPerson">Ændre kontaktperson</label>
+            <textarea class="form-control" id="kontaktPerson" style= "height: 150px; width: 500px" th:field="${child.kontaktPerson}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="CPR">Ændre CPR</label>
+            <input class="form-control" id="CPR" type="text"  th:field="${child.cpr}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="startdato">Ændre startdato</label>
+            <input class="form-control" id="startdato" type="date"  th:field="${child.startDato}"/>
+        </div>
+
+        <div class="form-group">
+            <label for="noter">Ændre noter</label>
+            <textarea class="form-control" id="noter" style= "height: 150px; width: 500px"  th:field="${child.noter}"/>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Rediger"/>
+        </div>
+
+    </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+</body>
+</html>
